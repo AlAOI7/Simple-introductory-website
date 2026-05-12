@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحمد علي | مصمم ومطور مواقع</title>
+    <title>شهد الحويطي | مصممة ومطورة مواقع</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <!-- شريط التنقل -->
     <nav>
         <div class="nav-container">
-            <div class="logo">أحمد علي</div>
+            <div class="logo">شهد الحويطي</div>
             <ul class="navbar">
                 <li><a href="#home">الرئيسية</a></li>
                 <li><a href="#about">من أنا</a></li>
@@ -25,8 +25,8 @@
     <!-- القسم الرئيسي -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>مرحباً، أنا أحمد علي</h1>
-            <p>مطور واجهات أمامية ومصمم مواقع ويب. أساعد الشركات والأفراد في بناء حضور رقمي مميز.</p>
+            <h1>مرحباً، أنا شهد الحويطي</h1>
+            <p>مطورة واجهات أمامية ومصممة مواقع ويب. أساعد الشركات والأفراد في بناء حضور رقمي مميز.</p>
         </div>
     </section>
 
@@ -36,13 +36,15 @@
             <h2>من أنا</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>أنا أحمد علي، مطور مواقع ويب بخبرة 3 سنوات في تصميم وتطوير الواجهات الأمامية.</p>
+                    <p>أنا شهد الحويطي، مطورة مواقع ويب بخبرة 3 سنوات في تصميم وتطوير الواجهات الأمامية.</p>
                     <p>أعمل على تحويل الأفكار إلى مواقع إلكترونية عملية، سريعة، وسهلة الاستخدام. أركز على تقديم تجربة مستخدم ممتازة مع كود نظيف ومنظم.</p>
                     <p>حصلت على شهادة في علوم الحاسوب وأستمر في تطوير مهاراتي باستمرار لمواكبة أحدث التقنيات.</p>
                 </div>
-      <div class="about-image">
-    <img src="image.jpeg" alt="صورتي الشخصية" class="about-img">
-</div>
+                <div class="about-image">
+                    <div class="avatar-placeholder">
+                        <span class="avatar-initial">ش</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -68,12 +70,13 @@
             </div>
 
             <h3>منهجية العمل</h3>
-            <ul class="work-steps">
+            <!-- قائمة مرتبة <ol> - تم إضافتها -->
+            <ol class="work-steps">
                 <li>المرحلة الأولى: تحليل المتطلبات وفهم احتياجات العميل</li>
                 <li>المرحلة الثانية: تصميم واجهات وإطارات أولية</li>
                 <li>المرحلة الثالثة: تطوير وبرمجة الموقع</li>
                 <li>المرحلة الرابعة: اختبار وتسليم المشروع النهائي</li>
-            </ul>
+            </ol>
 
             <h3>المهارات التقنية</h3>
             <ul class="skills-list">
@@ -91,7 +94,18 @@
         <div class="container">
             <h2>أعمالي السابقة</h2>
             
-            <table class="projects-table">
+            <!-- قائمة منسدلة Dropdown - تم إضافتها لتصفية المشاريع -->
+            <div class="filter-container">
+                <label for="projectFilter">تصفية حسب التقنية: </label>
+                <select id="projectFilter" class="filter-dropdown">
+                    <option value="all">جميع المشاريع</option>
+                    <option value="html-css-js">HTML/CSS/JS</option>
+                    <option value="react">React</option>
+                    <option value="vue">Vue.js</option>
+                </select>
+            </div>
+
+            <table class="projects-table" id="projectsTable">
                 <thead>
                     <tr>
                         <th>اسم المشروع</th>
@@ -101,25 +115,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr data-tech="html-css-js">
                         <td>متجر إلكتروني للأزياء</td>
                         <td>يناير 2024</td>
                         <td>HTML, CSS, JavaScript</td>
                         <td>متجر كامل مع سلة مشتريات وتصفية منتجات</td>
                     </tr>
-                    <tr>
+                    <tr data-tech="react">
                         <td>موقع شركة تسويق رقمي</td>
                         <td>سبتمبر 2023</td>
                         <td>React, Bootstrap</td>
                         <td>موقع تعريفي للشركة مع نموذج اتصال ومدونة</td>
                     </tr>
-                    <tr>
+                    <tr data-tech="vue">
                         <td>تطبيق إدارة مهام</td>
                         <td>يونيو 2024</td>
                         <td>Vue.js, LocalStorage</td>
                         <td>تطبيق لإدارة المهام اليومية مع إشعارات</td>
                     </tr>
-                    <tr>
+                    <tr data-tech="html-css-js">
                         <td>موقع شخصي لكاتب</td>
                         <td>مارس 2023</td>
                         <td>HTML, CSS, JavaScript</td>
@@ -211,13 +225,13 @@
         </div>
     </section>
 
-    <!-- تذييل الصفحة -->
+    <!-- تذييل الصفحة مع روابط خارجية مفعلة -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>أحمد علي</h4>
-                    <p>مطور مواقع ويب محترف</p>
+                    <h4>شهد الحويطي</h4>
+                    <p>مطورة مواقع ويب محترفة</p>
                 </div>
                 <div class="footer-section">
                     <h4>روابط سريعة</h4>
@@ -231,15 +245,15 @@
                 <div class="footer-section">
                     <h4>وسائل التواصل</h4>
                     <ul>
-                        <li><a href="#">البريد الإلكتروني</a></li>
-                        <li><a href="#">لينكد إن</a></li>
-                        <li><a href="#">تويتر</a></li>
-                        <li><a href="#">جيت هاب</a></li>
+                        <li><a href="mailto:shahed@example.com" target="_blank">البريد الإلكتروني</a></li>
+                        <li><a href="https://www.linkedin.com/in/shahed-alhowiti" target="_blank">لينكد إن</a></li>
+                        <li><a href="https://twitter.com/shahed_alhowiti" target="_blank">تويتر</a></li>
+                        <li><a href="https://github.com/shahed-alhowiti" target="_blank">جيت هاب</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة - أحمد علي 2025</p>
+                <p>جميع الحقوق محفوظة - شهد الحويطي 2025</p>
                 <p><a href="#home">العودة إلى الأعلى</a></p>
             </div>
         </div>
