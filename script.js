@@ -1,14 +1,18 @@
-// تنبيه ترحيبي
-alert("مرحباً بك في موقع أحمد علي - مطور مواقع ويب");
+// ========================================
+// تنبيه ترحيبي باستخدام document.write (المطلوب)
+// ========================================
+document.write('<div class="welcome-banner" style="background-color: #9B2C5B; color: white; text-align: center; padding: 10px; font-weight: bold;">🎉 مرحباً بكِ في موقع شهد الحويطي - مطورة مواقع ويب 🎉</div>');
 
 // تعريف المتغيرات
-let siteOwner = "أحمد علي";
+let siteOwner = "شهد الحويطي";
 const siteYear = 2025;
 
 // إظهار رسالة في وحدة التحكم
 console.log("تم تحميل موقع " + siteOwner + " بنجاح");
 
+// ========================================
 // التعامل مع نموذج الاتصال
+// ========================================
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
     
@@ -21,20 +25,20 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     
     // التحقق من صحة المدخلات باستخدام if-else
     if (name === "" || email === "" || message === "") {
-        feedback.innerHTML = "خطأ: الرجاء ملء جميع الحقول المطلوبة";
+        feedback.innerHTML = "❌ خطأ: الرجاء ملء جميع الحقول المطلوبة";
         feedback.style.backgroundColor = "#FEE2E2";
         feedback.style.color = "#991B1B";
         feedback.style.border = "1px solid #FCA5A5";
     } 
     else if (service === "") {
-        feedback.innerHTML = "تنبيه: الرجاء اختيار نوع الخدمة";
+        feedback.innerHTML = "⚠️ تنبيه: الرجاء اختيار نوع الخدمة";
         feedback.style.backgroundColor = "#FEF3C7";
         feedback.style.color = "#92400E";
         feedback.style.border = "1px solid #FCD34D";
     }
     else {
         // في حال نجاح الإرسال
-        feedback.innerHTML = "تم إرسال رسالتك بنجاح. سأتواصل معك قريباً يا " + name;
+        feedback.innerHTML = "✅ تم إرسال رسالتك بنجاح. سأتواصل معك قريباً يا " + name;
         feedback.style.backgroundColor = "#D1FAE5";
         feedback.style.color = "#065F46";
         feedback.style.border = "1px solid #6EE7B7";
@@ -57,20 +61,26 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     }, 5000);
 });
 
+// ========================================
 // استخدام حلقة while لعرض رسائل في وحدة التحكم
+// ========================================
 let counter = 1;
 while (counter <= 5) {
     console.log("تم فتح الموقع - الزيارة رقم " + counter);
     counter++;
 }
 
+// ========================================
 // عملية حسابية بسيطة
+// ========================================
 let projectsCount = 12;
 let happyClients = 9;
 let averageRating = (happyClients / projectsCount) * 5;
 console.log("متوسط تقييم المشاريع: " + averageRating.toFixed(1) + " من 5");
 
+// ========================================
 // دالة للتمرير السلس عند النقر على الروابط
+// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -82,4 +92,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// ========================================
+// تفعيل القائمة المنسدلة (Dropdown) لتصفية الجدول
+// ========================================
+const filterDropdown = document.getElementById('projectFilter');
+const tableRows = document.querySelectorAll('#projectsTable tbody tr');
+
+if (filterDropdown) {
+    filterDropdown.addEventListener('change', function() {
+        const selectedValue = this.value;
+        
+        tableRows.forEach(row => {
+            if (selectedValue === 'all') {
+                row.style.display = '';
+            } else if (row.getAttribute('data-tech') === selectedValue) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+}
+
+// ========================================
+// إضافة تأثير على الروابط الخارجية (تأكيد عند المغادرة)
+// ========================================
+const externalLinks = document.querySelectorAll('footer a[href^="http"], footer a[href^="mailto:"]');
+externalLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        console.log("سيتم الانتقال إلى الرابط الخارجي: " + this.href);
+    });
+});
+
+// ========================================
+// إظهار رسالة ترحيبية إضافية باستخدام alert
+// ========================================
+window.addEventListener('load', function() {
+    console.log("تم تحميل موقع شهد الحويطي بالكامل!");
 });
